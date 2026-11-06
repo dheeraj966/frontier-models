@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Frontier AI models compared: composite intelligence, benchmarks, prices and speed — refreshed daily from Artificial Analysis."
+    />
+    <meta name="theme-color" content="#f3efe7" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Frontier Model Viz</title>
+    <script>
+      // Apply the saved theme before first paint (no flash). Default: follow the system.
+      try {
+        var p = JSON.parse(localStorage.getItem('fmv:prefs:v1') || '{}');
+        var pref = p.theme || 'system';
+        var t = pref === 'system' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : pref;
+        document.documentElement.dataset.theme = t;
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+id,name,short_name,category,min,max,unit,direction,weight,description
+mmlu-pro,MMLU-Pro,MMLU-Pro,knowledge,0,100,%,higher-better,0.1,"Graduate-level multiple choice across 14 subjects, with ten answer options per question."
+gpqa-diamond,GPQA Diamond,GPQA-D,reasoning,0,100,%,higher-better,0.16,"PhD-level biology, chemistry and physics questions written to resist web search."
+aime-2025,AIME 2025,AIME,math,0,100,%,higher-better,0.1,Problems from the 2025 American Invitational Mathematics Examination.
+swe-bench-verified,SWE-bench Verified,SWE-bench,coding,0,100,%,higher-better,0.16,Human-validated GitHub issues; the model must write a patch that makes the repository's tests pass.
+livecodebench,LiveCodeBench v6,LiveCode,coding,0,100,%,higher-better,0.1,Continuously refreshed competitive-programming problems to limit training-data contamination.
+mmmu-pro,MMMU-Pro,MMMU,multimodal,0,100,%,higher-better,0.1,"College-level questions that require reading images, charts and diagrams."
+arena-elo,LMArena Elo,Arena,human-preference,1000,1600,elo,higher-better,0.1,Crowd-sourced rating from blind pairwise votes on real prompts.
+tau2-bench,τ²-bench,τ²-bench,agentic,0,100,%,higher-better,0.1,Multi-turn tool use with a simulated customer in service domains.
+aa-intelligence-index,Artificial Analysis Intelligence Index,AA Index,aggregate,0,100,score,higher-better,0.08,Artificial Analysis' composite of independently run evaluations (0–100).

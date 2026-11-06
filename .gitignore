@@ -1,0 +1,57 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+
+# ── Build output ──────────────────────────────────────────────────────────────
+dist/
+dist-ssr/
+*.tsbuildinfo
+
+# ── Tests & coverage ──────────────────────────────────────────────────────────
+coverage/
+playwright-report/
+blob-report/
+test-results/
+playwright/.cache/
+
+# ── Environment & secrets ─────────────────────────────────────────────────────
+# Keep real credentials local. .env.example documents every variable and
+# .env.static is committed because `vite build --mode static` reads it.
+.env
+.env.*
+!.env.example
+!.env.static
+
+# ── Runtime data ──────────────────────────────────────────────────────────────
+# data/*.csv is the app's database and is committed (the Pages workflow updates
+# it daily). Only the server's atomic-write temp files are ignored.
+data/*.tmp
+*.tmp
+
+# ── Caches ────────────────────────────────────────────────────────────────────
+.cache/
+.vite/
+.eslintcache
+.stylelintcache
+vite.config.ts.timestamp-*
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── Local scratch output ──────────────────────────────────────────────────────
+# Screenshots and draft files from Claude sessions; not part of the app.
+Claude outputs/
+
+# ── Editors & OS ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.pid
+*.pid.lock

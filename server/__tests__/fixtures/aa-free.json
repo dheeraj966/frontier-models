@@ -1,0 +1,77 @@
+{
+  "tier": "free",
+  "intelligence_index_version": 5,
+  "pagination": { "page": 1, "page_size": 200, "total_pages": 1, "has_more": false },
+  "data": [
+    {
+      "id": "1",
+      "name": "Claude Fable 5.5",
+      "slug": "claude-fable-5-5",
+      "release_date": "2026-08-12",
+      "model_creator": { "id": "a", "name": "Anthropic" },
+      "evaluations": { "artificial_analysis_intelligence_index": 61.3, "artificial_analysis_coding_index": null },
+      "pricing": { "price_1m_input_tokens": 15, "price_1m_output_tokens": 75 },
+      "performance": { "median_output_tokens_per_second": 71.4, "median_time_to_first_token_seconds": 1.32 }
+    },
+    {
+      "id": "2",
+      "name": "GPT-6.1 Astra (xhigh)",
+      "slug": "gpt-6-1-astra-xhigh",
+      "release_date": "2026-09-03",
+      "model_creator": { "id": "o", "name": "OpenAI" },
+      "evaluations": { "artificial_analysis_intelligence_index": 63.9 },
+      "pricing": { "price_1m_input_tokens": 14, "price_1m_output_tokens": 70 },
+      "performance": { "median_output_tokens_per_second": 88.2, "median_time_to_first_token_seconds": 9.8 }
+    },
+    {
+      "id": "3",
+      "name": "GPT-6.1 Astra",
+      "slug": "gpt-6-1-astra",
+      "release_date": "2026-09-03",
+      "model_creator": { "id": "o", "name": "OpenAI" },
+      "evaluations": { "artificial_analysis_intelligence_index": 60.1 },
+      "pricing": { "price_1m_input_tokens": 14, "price_1m_output_tokens": 70 },
+      "performance": { "median_output_tokens_per_second": 102.5, "median_time_to_first_token_seconds": 2.1 }
+    },
+    {
+      "id": "4",
+      "name": "Gemini 4 Argon",
+      "slug": "gemini-4-argon",
+      "release_date": "2026-07-21",
+      "model_creator": { "id": "g", "name": "Google" },
+      "evaluations": { "artificial_analysis_intelligence_index": 59.4 },
+      "pricing": { "price_1m_input_tokens": 7.5, "price_1m_output_tokens": 30 },
+      "performance": { "median_output_tokens_per_second": 154.0, "median_time_to_first_token_seconds": 0.9 }
+    },
+    {
+      "id": "5",
+      "name": "DeepSeek V4.1 Flash 1017",
+      "slug": "deepseek-v4-1-flash-1017",
+      "release_date": "2026-10-17",
+      "model_creator": { "id": "d", "name": "DeepSeek" },
+      "evaluations": { "artificial_analysis_intelligence_index": 44.2 },
+      "pricing": { "price_1m_input_tokens": 0.15, "price_1m_output_tokens": 0.6 },
+      "performance": { "median_output_tokens_per_second": 210.3, "median_time_to_first_token_seconds": 0.6 }
+    },
+    {
+      "id": "6",
+      "name": "Mistral Large 4",
+      "slug": "mistral-large-4",
+      "release_date": "2026-06-30",
+      "model_creator": { "id": "m", "name": "Mistral" },
+      "evaluations": { "artificial_analysis_intelligence_index": 51.7 },
+      "pricing": { "price_1m_input_tokens": 2, "price_1m_output_tokens": 6 },
+      "performance": { "median_output_tokens_per_second": 120.0, "median_time_to_first_token_seconds": 0.5 }
+    },
+    {
+      "id": "7",
+      "name": "Tiny Model",
+      "slug": "tiny-model",
+      "release_date": null,
+      "model_creator": { "id": "x", "name": "Other" },
+      "evaluations": { "artificial_analysis_intelligence_index": null },
+      "pricing": { "price_1m_input_tokens": null, "price_1m_output_tokens": null },
+      "performance": { "median_output_tokens_per_second": null, "median_time_to_first_token_seconds": null }
+    }
+  ]
+}

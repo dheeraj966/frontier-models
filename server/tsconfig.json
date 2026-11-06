@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": false,
+    "types": ["node"]
+  },
+  "include": ["./**/*.ts", "../src/data/types.ts", "../src/lib/**/*.ts", "../src/utils/scores.ts", "../scripts/**/*.ts"]
+}

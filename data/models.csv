@@ -1,0 +1,11 @@
+id,name,short_name,provider,family,status,baseline,release_date,color,context_window,input_price,output_price,output_tps,ttft_s,stats_source,stats_as_of,origin,aa_slug,notes
+claude-fable-5.5,Claude Fable 5.5,Fable 5.5,Anthropic,Claude Fable,released,,2026-08-12,#D97757,400000,15,75,72,1.3,mock,,seed,,
+claude-fable-5.1,Claude Fable 5.1,Fable 5.1,Anthropic,Claude Fable,released,yes,2026-02-24,#E8A87C,400000,12,60,84,1.0,mock,,seed,,
+gpt-6.1-astra,GPT-6.1 Astra,6.1 Astra,OpenAI,GPT,released,,2026-09-03,#10A37F,400000,14,70,96,2.1,mock,,seed,,
+gpt-6,GPT-6,GPT-6,OpenAI,GPT,released,yes,2026-04-15,#34C7A4,256000,10,40,112,0.9,mock,,seed,,
+gemini-4-argon,Gemini 4 Argon,4 Argon,Google,Gemini,released,,2026-07-21,#4285F4,2000000,8,32,152,0.7,mock,,seed,,
+gemini-4-carbon,Gemini 4 Carbon,4 Carbon,Google,Gemini,expected,,,#7EB3FF,2000000,9,36,,,mock,,seed,,"Announced, not shipped — mock projections."
+kimi-k3.1,Kimi K3.1,K3.1,Moonshot,Kimi,released,yes,2026-05-30,#7C4DFF,256000,0.6,2.5,58,0.8,mock,,seed,,
+kimi-k3.1-pro,Kimi K3.1 Pro,K3.1 Pro,Moonshot,Kimi,released,,2026-09-18,#A98BFF,256000,2,8,46,1.6,mock,,seed,,
+deepseek-v4-1017,DeepSeek V4 1017,V4,DeepSeek,DeepSeek V4,released,yes,2026-06-11,#4D6BFE,160000,0.3,1.2,34,1.9,mock,,seed,,
+deepseek-v4.1-flash-1017,DeepSeek V4.1 Flash 1017,V4.1 Flash,DeepSeek,DeepSeek V4,released,,2026-10-17,#8FA4FF,160000,0.15,0.6,205,0.5,mock,,seed,,

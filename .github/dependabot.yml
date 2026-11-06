@@ -1,0 +1,17 @@
+# Weekly dependency PRs. Minor/patch updates arrive as one grouped PR; majors (like the
+# Vite 8 jump that broke `npm update`) arrive one by one — CI must pass before merging.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 6
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

@@ -1,0 +1,95 @@
+# Continuous deployment to GitHub Pages.
+#   • push to main      → test, build, deploy
+#   • daily 05:17 UTC   → pull live data (if AA_API_KEY secret is set), commit data/*.csv, build, deploy
+#   • manual            → same as daily (Actions tab → "Deploy to GitHub Pages" → Run workflow)
+# One-time setup: Settings → Pages → Source: "GitHub Actions".
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refresh-data:
+    name: Refresh live data
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    env:
+      AA_API_KEY: ${{ secrets.AA_API_KEY }}
+      AA_TIER: ${{ vars.AA_TIER || 'free' }}
+      AA_IMPORT_TOP: ${{ vars.AA_IMPORT_TOP || '0' }}
+      AA_ALIASES: ${{ vars.AA_ALIASES }}
+      NOTIFY_WEBHOOK_URL: ${{ secrets.NOTIFY_WEBHOOK_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Pull from Artificial Analysis
+        if: env.AA_API_KEY != ''
+        continue-on-error: true
+        run: npm run ingest
+      - name: Validate data/*.csv
+        run: npm run check:data
+      - name: Commit refreshed CSV files
+        run: |
+          git add data/*.csv
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data: daily refresh $(date -u +%F) [skip ci]"
+          git push
+
+  build:
+    name: Test and build
+    needs: refresh-data
+    if: ${{ !cancelled() && (needs.refresh-data.result == 'success' || needs.refresh-data.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }} # picks up the data commit made by the previous job
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Unit tests
+        run: npm test
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Build static site
+        run: npm run build:static
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
